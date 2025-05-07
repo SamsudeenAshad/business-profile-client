@@ -97,8 +97,15 @@ body::before {
     z-index: 0;
 }
 
+.site-logo {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
 .site-logo img {
     max-width: 150px;
+    height: auto;
     transition: var(--transition);
 }
 
@@ -674,6 +681,7 @@ body::before {
 .list-section .list-box {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -844,38 +852,51 @@ body::before {
         height: 35px;
         font-size: 16px;
     }
+
+    .main-menu-wrap {
+        padding: 15px 0;
+    }
+
+    .site-logo {
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+
+    .site-logo img {
+        max-width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .site-logo img {
+        max-width: 80px;
+    }
+
+    .main-menu-wrap {
+        padding: 10px 0;
+    }
 }
 
 /* Mobile Header Styles */
 @media screen and (max-width: 768px) {
-    .top-header-area {
-        padding: 10px 0;
-    }
-
     .main-menu-wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        padding: 15px 10px;
-        position: relative;
-        z-index: 1;
+        gap: 15px;
+        padding: 15px;
     }
 
     .site-logo {
         order: 1;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        margin: 0;
-        background: none;
-        border: none;
+        width: auto;
+        margin: 0 auto;
+        padding: 10px 15px;
     }
 
     .site-logo img {
-        max-width: 120px;
+        max-width: 100px;
         height: auto;
-        display: inline-block;
     }
 
     .company-name {
@@ -883,27 +904,17 @@ body::before {
         width: 100%;
         text-align: center;
         padding: 15px 10px;
-        margin: 10px 0;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
     }
 
     .company-name h1 {
-        font-size: 20px;
-        line-height: 1.4;
-        margin-bottom: 8px;
-        padding: 0 15px;
-        color: #fff;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        font-size: 18px;
+        line-height: 1.3;
+        margin-bottom: 5px;
     }
 
     .company-name .tagline {
         font-size: 14px;
-        color: #1a75ff;
-        display: block;
-        margin: 5px 0;
+        margin-top: 5px;
     }
 
     .header-icons {
@@ -911,45 +922,19 @@ body::before {
         width: 100%;
         display: flex;
         justify-content: center;
-        gap: 20px;
-        margin: 10px 0;
-        padding: 10px;
-    }
-
-    .header-icons a {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: #fff;
-        transition: all 0.3s ease;
-    }
-
-    .header-icons a:hover {
-        background: #1a75ff;
-        transform: translateY(-2px);
+        gap: 15px;
+        margin-top: 10px;
     }
 }
 
 /* Even smaller screens */
 @media screen and (max-width: 480px) {
-    .main-menu-wrap {
-        gap: 15px;
-        padding: 10px 5px;
-    }
-
     .site-logo img {
-        max-width: 100px;
-    }
-
-    .company-name {
-        padding: 12px 8px;
+        max-width: 80px;
     }
 
     .company-name h1 {
-        font-size: 18px;
-        padding: 0 10px;
+        font-size: 16px;
     }
 
     .company-name .tagline {
@@ -957,13 +942,13 @@ body::before {
     }
 
     .header-icons {
-        gap: 15px;
+        gap: 10px;
     }
 
     .header-icons a {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
 }
 
